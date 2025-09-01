@@ -1,11 +1,18 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'tl-root',
   imports: [],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('tagged-literal');
+  readonly user = 'ivan';
+  readonly group = 'guest';
+
+  greeting(strings: TemplateStringsArray, user: string, group: string): string {
+    console.log(strings);
+
+    return `${user}@${group}:/${group}/${user}$`;
+  }
 }
