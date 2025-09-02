@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
 export class App {
   readonly user = 'ivan';
   readonly group = 'guest';
+  readonly alt = 'image';
 
   greeting(strings: TemplateStringsArray, user: string, group: string): string {
     console.log('strings ::', strings);
@@ -17,7 +18,7 @@ export class App {
     return `${user}@${group}:/${group}/${user}$`;
   }
 
-  rest(strings: TemplateStringsArray, ...placeholders: string[]): void {
+  rest(_: TemplateStringsArray, ...placeholders: string[]): void {
     console.log('placeholders ::', placeholders);
   }
 
@@ -31,5 +32,21 @@ export class App {
 
   hi(strings: TemplateStringsArray, name: string): string {
     return `${strings[0]} ${name.toUpperCase()}${strings[1]}`;
+  }
+
+  description(): string {
+    return this.alt;
+  }
+
+  altText(strings: TemplateStringsArray, alt: string): string {
+    return `${strings[0].trim()} ${alt}`;
+  }
+
+  firstName(_: TemplateStringsArray): string {
+    return `Aaron`;
+  }
+
+  secondName(_: TemplateStringsArray): string {
+    return `Greenberg`;
   }
 }

@@ -9,3 +9,7 @@
 <div>{{ hi`Hi, ${name()}!` | lowercase }}</div>
 
 <div>{{ greeting`Hi, ${hi`Hi, ${name() | uppercase}!`} from group ${getGroup()}!` }}</div>
+
+<img src="#" [alt]="altText`awesome ${description()}`">
+
+<div>{{ getFullName() }}</div>
