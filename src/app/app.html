@@ -1,1 +1,11 @@
 <div>{{ greeting`Hi, ${user} from group ${group}!` }}</div>
+
+<div>{{ rest`Hello, ${user} from group ${group}` }}</div>
+
+<div>{{ hi`Hi, ${name() + ' and friends'}!` }}</div>
+
+<div>{{ hi`Hi, ${name() | uppercase}!` }}</div>
+
+<div>{{ hi`Hi, ${name()}!` | lowercase }}</div>
+
+<div>{{ greeting`Hi, ${hi`Hi, ${name() | uppercase}!`} from group ${getGroup()}!` }}</div>
